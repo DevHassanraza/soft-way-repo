@@ -1,11 +1,25 @@
+
 import Image from "next/image";
 import Link from "next/link";
+import { Phone, MessageCircle } from "lucide-react";
 
 const socialLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/softwayhub/" },
-  { label: "Instagram", href: "#" },
-  { label: "Facebook", href: "https://www.facebook.com/share/1DZh5rWp9R/?mibextid=wwXIfr" },
-  { label: "X", href: "#" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/softwayhub/",
+  },
+  {
+    label: "Instagram",
+    href: "#",
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/share/1DZh5rWp9R/?mibextid=wwXIfr",
+  },
+  {
+    label: "X",
+    href: "#",
+  },
 ];
 
 export default function Footer() {
@@ -24,12 +38,36 @@ export default function Footer() {
             />
           </Link>
 
-          {/* SHORT LINE */}
+          {/* DESCRIPTION */}
           <p className="sw-footer-text">
             Engineering digital products for modern business.
           </p>
 
-          {/* SOCIAL */}
+          {/* CONTACT DETAILS */}
+          <div className="sw-footer-contact">
+            <a
+              href="tel:+14694362836"
+              className="sw-footer-contact-link"
+              aria-label="Call SoftwayHub"
+            >
+              <Phone size={18} strokeWidth={1.8} />
+              <span>+1 469-436-2836</span>
+            </a>
+
+            <a
+              href="https://wa.me/14694362836"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sw-footer-contact-link"
+              aria-label="Chat with SoftwayHub on WhatsApp"
+            >
+              <MessageCircle size={18} strokeWidth={1.8} />
+              <span>WhatsApp</span>
+              <span className="sw-footer-contact-arrow">↗</span>
+            </a>
+          </div>
+
+          {/* SOCIAL LINKS */}
           <div className="sw-footer-socials">
             {socialLinks.map((social) => (
               <a

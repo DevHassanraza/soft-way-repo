@@ -1,4 +1,7 @@
+
 import type { Metadata } from "next";
+import Script from "next/script";
+
 import {
   Inter,
   Space_Grotesk,
@@ -122,7 +125,27 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable}`}
       >
+        {/* GOOGLE ANALYTICS GA4 START */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-HR5LXT78BS"
+          strategy="afterInteractive"
+        />
+
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-HR5LXT78BS');
+          `}
+        </Script>
+        {/* GOOGLE ANALYTICS GA4 END */}
+
         <StructuredData />
+
         <ThemeProvider>
           <IntroLoader />
           {children}

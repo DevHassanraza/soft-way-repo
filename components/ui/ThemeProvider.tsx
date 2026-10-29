@@ -1,3 +1,4 @@
+
 "use client";
 
 import { ThemeProvider as NextThemesProvider } from "next-themes";
@@ -10,7 +11,7 @@ export default function ThemeProvider({
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="dark"
+      defaultTheme="light"
       enableSystem={false}
       disableTransitionOnChange
     >
